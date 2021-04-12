@@ -1,0 +1,115 @@
+﻿<Window x:Class="TFSTool.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="700" Width="1020"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown" Icon="/group.png">
+    <Window.Resources>
+        <Storyboard x:Key="OpenMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="70" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="CloseMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200" />
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ToggleButton.Checked" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource OpenMenu}" />
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ToggleButton.Unchecked" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource CloseMenu}" />
+        </EventTrigger>
+    </Window.Triggers>
+    <Border CornerRadius="10">
+        <Border.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#1a79ff" Offset="0.0" />
+                <GradientStop Color="#99c3ff" Offset="1" />
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Height="60" VerticalAlignment="Top" Background="Transparent" Grid.Column="1">
+                <TextBlock  FontSize="22"
+                        FontWeight="Bold"
+                        Text="TFS User Management Tool"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Foreground="White" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False"
+                                             Margin="10" Foreground="White">
+                        <StackPanel>
+                            <Button VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding CloseApplicationCommand}">
+                                <materialDesign:PackIcon Kind="Shutdown" Width="25" Height="25"
+                                                              Foreground="#4e99ff" />
+                            </Button>
+                            <Button VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <materialDesign:PackIcon Kind="Help" Width="25" Height="25"
+                                                              Foreground="#4e99ff" />
+                            </Button>
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                </StackPanel>
+                <!--<Border BorderThickness="0,0,0,1" BorderBrush="White"></Border>-->
+            </Grid>
+
+            <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Grid.Column="0" Grid.RowSpan="2" Background="Transparent">
+                <Border CornerRadius="10,0,0,10">
+                    <Border.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#4e99ff" Offset="0.0" />
+                            <GradientStop Color="#80b5ff" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <StackPanel>
+                        <ToggleButton  x:Name="ButtonOpenMenu" Height="60" Width="60" IsChecked="False"
+                        HorizontalAlignment="Left" VerticalAlignment="Top"
+                        Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                        Background="Transparent"  BorderBrush="Transparent" Foreground="White">
+                            <materialDesign:PackIcon Kind="Menu" Width="25" Height="25" />
+                        </ToggleButton>
+                        <ListView x:Name="ListViewMenu" Foreground="White" FontWeight="Bold"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                  SelectedIndex="{Binding SelectedIndex}">
+                            <ListViewItem  Height="60" IsSelected="True" ToolTip="Home">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="ViewDashboard" Height="25" Width="25" Margin="10" />
+                                    <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10" />
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem Height="60" ToolTip="User Overview">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon Kind="Users" Height="25" Width="25" Margin="10" />
+                                    <TextBlock Text="User Overview" VerticalAlignment="Center" Margin="20 10" />
+                                </StackPanel>
+                            </ListViewItem>
+                        </ListView>
+                    </StackPanel>
+                </Border>
+            </Grid>
+            <ContentControl Grid.Row="1" Grid.Column="1" Margin="10" Content="{Binding SelectedView}" />
+        </Grid>
+    </Border>
+</Window>

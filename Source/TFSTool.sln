@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFSTool.UI", "TFSTool.UI\TFSTool.UI.csproj", "{F946A116-007C-4316-8E82-BD9B4053DDEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFSTool.Test", "TFSTool.Test\TFSTool.Test.csproj", "{CEA4FD51-7B7B-44D0-86E7-2DFFC5B949CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFSTool.Services", "TFSTool.Services\TFSTool.Services.csproj", "{ADD57F81-24E2-4193-BBB7-C6F364EEF968}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExternalTfsService", "ExternalTfsService\ExternalTfsService.csproj", "{42D58BDB-9C65-4983-9420-33B19423C6EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F946A116-007C-4316-8E82-BD9B4053DDEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F946A116-007C-4316-8E82-BD9B4053DDEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F946A116-007C-4316-8E82-BD9B4053DDEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F946A116-007C-4316-8E82-BD9B4053DDEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA4FD51-7B7B-44D0-86E7-2DFFC5B949CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA4FD51-7B7B-44D0-86E7-2DFFC5B949CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA4FD51-7B7B-44D0-86E7-2DFFC5B949CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA4FD51-7B7B-44D0-86E7-2DFFC5B949CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADD57F81-24E2-4193-BBB7-C6F364EEF968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD57F81-24E2-4193-BBB7-C6F364EEF968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD57F81-24E2-4193-BBB7-C6F364EEF968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD57F81-24E2-4193-BBB7-C6F364EEF968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42D58BDB-9C65-4983-9420-33B19423C6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42D58BDB-9C65-4983-9420-33B19423C6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D58BDB-9C65-4983-9420-33B19423C6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42D58BDB-9C65-4983-9420-33B19423C6EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A719420C-7066-45AA-B2A1-445880F33B62}
+	EndGlobalSection
+EndGlobal

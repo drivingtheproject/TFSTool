@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="TFSTool.UI.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <StackPanel>
+
+        <TextBlock Text="Improvements"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left" Margin="0,0,0,20" />
+        <StackPanel Orientation="Horizontal">
+
+            <Border Width="750" Height="200"  CornerRadius="10">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#00e660" Offset="0.0" />
+                        <GradientStop Color="#ccffe1" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Setters>
+                                <Setter Property="Margin" Value="20,10,0,0" />
+                                <Setter Property="FontSize" Value="18" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="FontWeight" Value="Normal" />
+                            </Style.Setters>
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock Text="1. Perfomance" />
+                    <TextBlock Text="2. Stabilty" />
+                    <TextBlock Text="3. Extensibility" />
+                    <TextBlock Text="4. Testibilty" />
+                    <TextBlock Text="5. User experience and UI responsiveness" />
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="10,0,0,0" />
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock Text="Features"
+                   Foreground="White"
+                   FontSize="28"
+                   HorizontalAlignment="Left" Margin="0,20,10,20" />
+            <StackPanel Orientation="Horizontal">
+                <Border Width="365" Height="200"  CornerRadius="10" Margin="0">
+                    <Border.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#bf80ff" Offset="0.0" />
+                            <GradientStop Color="#e6ccff" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Setters>
+                                    <Setter Property="Margin" Value="20,10,0,0" />
+                                    <Setter Property="FontSize" Value="18" />
+                                    <Setter Property="Foreground" Value="White" />
+                                    <Setter Property="FontWeight" Value="Normal" />
+                                </Style.Setters>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="1. MVVM" />
+                        <TextBlock Text="2. Other design patterns(Factory,Strategy)" />
+                        <TextBlock Text="3. Modularity" />
+                        <TextBlock Text="4. Logging" />
+                    </StackPanel>
+                </Border>
+                <Border Width="365" Height="200"  CornerRadius="10">
+                    <Border.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#2eb8b8" Offset="0.0" />
+                            <GradientStop Color="#99e6e6" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <StackPanel>
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Style.Setters>
+                                    <Setter Property="Margin" Value="20,10,0,0" />
+                                    <Setter Property="FontSize" Value="18" />
+                                    <Setter Property="Foreground" Value="White" />
+                                    <Setter Property="FontWeight" Value="Normal" />
+                                </Style.Setters>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="1. AutoMapper" />
+                        <TextBlock Text="2. XUnit, Moq, FluentAssertions" />
+                        <TextBlock Text="3. Serilog" />
+                        <TextBlock Text="4. MaterialDesign Themes" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
